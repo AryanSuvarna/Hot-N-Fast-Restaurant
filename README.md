@@ -1,4 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hot N' Fast Website
+
+## <u>Overview</u>
+
+This is a full-stack website I created for an imaginary fast-food restaurant named **"Hot N' Fast"**. The reason I  am creating this website is to get amy hands dirty and get a feel of the full-stack development process. **<u>NOTE:</u>** I used the same products as **McDonalds** to populate my menu. There are going to be 3 pages for menu: **Breakfast, Sandwiches & Wraps and Snacks & Sides**
+
+## <u>Tech Stack used for this website<u>
+
+This is the tech stack I used for this project. It was inspired by Theo's T3 stack, namely: 
+
+- Next.JS
+- TailwindCSS
+- Typescript
+- Prisma
+- Next-Auth
+- Zustand State Management
+- React Query
+
+Additionally, I used PaaS service providers such as PostgreSQL.
+
+
+<!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
@@ -33,4 +54,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details. -->
