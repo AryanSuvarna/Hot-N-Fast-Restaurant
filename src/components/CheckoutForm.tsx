@@ -7,6 +7,7 @@ import PulseLoader from "react-spinners/ClipLoader";
 
 
 const CheckoutForm = () => {
+    const nextAuthUrl = process.env.NEXTAUTH_URL;
     const stripe = useStripe();
     const elements = useElements();
 
@@ -59,7 +60,7 @@ const CheckoutForm = () => {
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-                return_url: `${process.env.NEXTAUTH_URL}/success`,
+                return_url: "https://hot-n-fast.vercel.app/success"
             },
         });
 
