@@ -9,7 +9,7 @@ import React from 'react'
 
 const getData = async (id: string) => {
     // we are fetching from our endpoint, which we have defined as /api/product
-    const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+    const res = await fetch(`/api/products/${id}`, {
         cache: "no-store" // this is temporary, will remove it later
     })
 

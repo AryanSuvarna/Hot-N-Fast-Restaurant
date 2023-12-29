@@ -17,7 +17,7 @@ const Payment = ({params}: {params:{id:string}}) => {
         const makeRequest = async () => {
             try {
                 const res = await fetch(
-                    `http://localhost:3000/api/create-payment-intent/${id}`,
+                    `/api/create-payment-intent/${id}`,
                     {
                         method: "POST",
                         headers: {

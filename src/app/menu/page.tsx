@@ -4,7 +4,7 @@ import React from 'react'
 
 const getData = async () => {
     // we are fetching from our endpoint, which we have defined as /api/categories
-    const res = await fetch("http://localhost:3000/api/categories")
+    const res = await fetch("/api/categories")
 
     if (!res.ok) {
         throw new Error("FAILED TO FETCH")
