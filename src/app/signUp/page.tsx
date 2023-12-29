@@ -18,8 +18,6 @@ const SignUpPage = () => {
 
     const { data: session, status } = useSession()
 
-    console.log(userInfo)
-
     const router = useRouter()
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -36,7 +34,7 @@ const SignUpPage = () => {
         }
 
         try {
-            const res = await fetch(`${process.env.NEXTAUTH_URL}/api/users`, {
+        const res = await fetch(`/api/users`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -21,7 +21,6 @@ const SuccessPage = () => {
 
     useEffect(() => {
         const makeRequest = async () => {
-            console.log("Success Page intent:", payment_intent);
             try {
                 await fetch(`/api/confirm/${payment_intent}`, {
                     method: "PUT",

@@ -16,7 +16,7 @@ const Promo = () => {
                     <p className='text-white text-4xl xl:text-5xl'>Now: <span className='text-yellow-500 font-bold'>$9.00*</span></p>
                 </div>
                 <Timer/>
-                <Link href={"/product/clqq13gmc000bjhl50befh04f"} className='bg-yellow-500 text-white px-6 py-3 rounded-md'>See more ➜</Link>
+                <Link href={"/product/clqr4b66n0005adu6zpfbye4g"} className='bg-yellow-500 text-white px-6 py-3 rounded-md'>See more ➜</Link>
                 <p className='text-yellow-500 text-xs'>*While offer lasts</p>
             </div>
             {/* IMAGE container */}

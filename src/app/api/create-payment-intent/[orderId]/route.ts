@@ -34,8 +34,6 @@ export async function POST(request: NextRequest, { params }: { params: { orderId
                 },
             });
 
-            console.log("from order paymentIntent:", paymentIntent.id)
-
             return new NextResponse(JSON.stringify({ clientSecret: paymentIntent.client_secret }), { status: 200 })
         } else {
             return new NextResponse(JSON.stringify({ message: "Order not found" }), { status: 404 })

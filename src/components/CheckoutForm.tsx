@@ -7,7 +7,6 @@ import PulseLoader from "react-spinners/ClipLoader";
 
 
 const CheckoutForm = () => {
-    const nextAuthUrl = process.env.NEXTAUTH_URL;
     const stripe = useStripe();
     const elements = useElements();
 

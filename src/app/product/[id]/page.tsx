@@ -21,7 +21,6 @@ const getData = async (id: string) => {
 const SingleProductPage = async ({ params }: { params: { id: string } }) => {
 
     // single prodcut has the same type as the ProductType defined in types/types.ts
-    console.log(params.id)
     const singleProduct: ProductType = await getData(params.id)
 
     return (
