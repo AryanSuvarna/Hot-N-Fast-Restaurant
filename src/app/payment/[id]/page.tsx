@@ -9,10 +9,10 @@ import { useEffect, useState } from "react";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
-const Payment = ({params}: {params:{id:string}}) => {
+const Payment = ({ params }: { params: { id: string } }) => {
     const router = useRouter()
 
-    const {status } = useSession({
+    const { status } = useSession({
         required: true,
         onUnauthenticated() {
             router.push("/login")
@@ -27,7 +27,7 @@ const Payment = ({params}: {params:{id:string}}) => {
         const makeRequest = async () => {
             try {
                 const res = await fetch(
-                    `${process.env.NEXTAUTH_URL}/api/create-payment-intent/${id}`,
+                    `/api/create-payment-intent/${id}`,
                     {
                         method: "POST",
                         headers: {
