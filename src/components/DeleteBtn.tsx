@@ -16,7 +16,7 @@ const DeleteBtn = ({ id }: { id: string }) => {
 
     const handleDelete = async () => {
         console.log(id)
-        const res = await fetch(`/api/products/${id}`, {
+        const res = await fetch(`http://localhost:3000/api/products/${id}`, {
             method: "DELETE",
         })
 
