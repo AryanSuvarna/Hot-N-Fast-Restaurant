@@ -42,7 +42,7 @@ const Payment = ({ params }: { params: { id: string } }) => {
             }
         }
 
-        makeRequest()
+        if (id) { makeRequest() }
     }, [id])
 
     const options: StripeElementsOptions = {
