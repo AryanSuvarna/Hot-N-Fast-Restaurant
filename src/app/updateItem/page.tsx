@@ -195,7 +195,7 @@ const UpdatePage = () => {
             <div className='p-8'>
                 <form className='shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex flex-wrap gap-4 p-8 rounded-sm' onSubmit={handleSubmit}>
                     <h1 className='text-2xl font-bold underline'>
-                        Update "{data.title}" details:
+                        Update &quot;{data.title}&quot; details:
                     </h1>
                     {/* TITLE CONTAINER */}
                     <div className='w-full flex flex-col gap-2'>

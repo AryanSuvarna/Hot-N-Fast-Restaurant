@@ -7,7 +7,7 @@ const Footer = () => {
         <div className='h-12 flex items-center justify-between md:h-24 p-4 lg:px-20 xl:px-40 my-4'>
             <Link href={"/"} className='uppercase font-bold flex items-center'>
                 <Image src={"/logo.png"} alt="" width={110} height={110} className='hidden md:block'/>
-                <span>Hot N' Fast</span>
+                <span>Hot N&apos; Fast</span>
             </Link>
             <p>Ⓒ All right reserved</p>
         </div>

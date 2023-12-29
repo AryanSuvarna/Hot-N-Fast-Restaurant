@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 
-const signUpPage = () => {
+const SignUpPage = () => {
     const [userInfo, setUserInfo] = useState({
         name: "",
         email: "",
@@ -149,4 +149,4 @@ const signUpPage = () => {
     }
 }
 
-export default signUpPage
+export default SignUpPage

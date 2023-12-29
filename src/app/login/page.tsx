@@ -36,7 +36,7 @@ const LoginPage = () => {
             router.push("/")
             toast.success("You are logged in!")
         }
-    }, [status])
+    }, [status, router])
 
     if (status === "loading") return <p>Loading...</p>
 

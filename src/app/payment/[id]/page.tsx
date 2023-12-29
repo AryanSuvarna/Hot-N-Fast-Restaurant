@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
-const payment = ({params}: {params:{id:string}}) => {
+const Payment = ({params}: {params:{id:string}}) => {
 
     const id = params.id
     const [clientSecret, setClientSecret] = useState("");
@@ -53,4 +53,4 @@ const payment = ({params}: {params:{id:string}}) => {
     )
 }
 
-export default payment
+export default Payment
