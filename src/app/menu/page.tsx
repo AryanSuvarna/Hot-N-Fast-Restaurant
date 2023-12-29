@@ -23,7 +23,7 @@ const Menu = async () => {
                 <Link
                     href={`/menu/${category.type}`} key={category.id}
                     className='w-full h-1/3 bg-cover md:h-1/2 p-8  hover:scale-105 hover:z-50 transition-all duration-500'
-                    style={{ backgroundImage: `url(${process.env.NEXTAUTH_URL}/${category.img})` }}
+                    style={{ backgroundImage: `url("${process.env.NEXTAUTH_URL}/${category.img}")` }}
                 >
                     {/* content */}
                     <div className={`text-${category.color} w-1/2`}>
