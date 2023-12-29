@@ -1,9 +1,9 @@
 import prisma from "@/utils/connect"
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import bcrypt from "bcrypt"
 
 // Add a new user
-export const POST = async (req:NextResponse) => {
+export const POST = async (req:NextRequest) => {
     try {
         const body = await req.json();
         const checkUser = await prisma.user.findUnique({
