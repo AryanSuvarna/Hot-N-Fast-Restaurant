@@ -29,7 +29,7 @@ const CartPage = () => {
         }
         else {
             try {
-                const res = await fetch("http://localhost:3000/api/orders", {
+                const res = await fetch("/api/orders", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -80,7 +80,6 @@ const CartPage = () => {
                                     <button className=" cursor-pointer  text-2xl" onClick={item.quantity > 1 ? () => removeSingleItemFromCart(
                                         {
                                             ...item,
-                                            // quantity: item.quantity - 1
                                         }
                                     ) : (undefined)}>{'-'}
                                     </button>

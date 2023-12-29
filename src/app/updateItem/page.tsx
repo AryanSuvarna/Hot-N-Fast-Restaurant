@@ -128,7 +128,7 @@ const UpdatePage = () => {
         if (data.img !== img) {
             try {
                 const url = await uploadImage()
-                await fetch(`http://localhost:3000/api/products/${productId}`, {
+                await fetch(`/api/products/${productId}`, {
                     method: "PUT",
                     body: JSON.stringify({
                         img: url,
@@ -149,7 +149,7 @@ const UpdatePage = () => {
         } else // if image is not changed, only update product
         {
             try {
-                await fetch(`http://localhost:3000/api/products/${productId}`, {
+                await fetch(`/products/${productId}`, {
                     method: "PUT",
                     body: JSON.stringify({
                         img: img,

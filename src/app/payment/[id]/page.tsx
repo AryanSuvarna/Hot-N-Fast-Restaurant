@@ -3,11 +3,21 @@
 import CheckoutForm from "@/components/CheckoutForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { StripeElementsOptions, loadStripe } from "@stripe/stripe-js";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 const Payment = ({params}: {params:{id:string}}) => {
+    const router = useRouter()
+
+    const {status } = useSession({
+        required: true,
+        onUnauthenticated() {
+            router.push("/login")
+        }
+    })
 
     const id = params.id
     const [clientSecret, setClientSecret] = useState("");
@@ -17,7 +27,7 @@ const Payment = ({params}: {params:{id:string}}) => {
         const makeRequest = async () => {
             try {
                 const res = await fetch(
-                    `http://localhost:3000/api/create-payment-intent/${id}`,
+                    `${process.env.NEXTAUTH_URL}/api/create-payment-intent/${id}`,
                     {
                         method: "POST",
                         headers: {
@@ -41,6 +51,8 @@ const Payment = ({params}: {params:{id:string}}) => {
             theme: "stripe",
         }
     }
+
+    if (status === "loading") return "Loading..."
 
     return (
         <div className="p-4">

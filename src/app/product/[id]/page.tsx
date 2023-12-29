@@ -9,9 +9,7 @@ import React from 'react'
 
 const getData = async (id: string) => {
     // we are fetching from our endpoint, which we have defined as /api/product
-    const res = await fetch(`http://localhost:3000/api/products/${id}`, {
-        cache: "no-store" // this is temporary, will remove it later
-    })
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products/${id}`)
 
     if (!res.ok) {
         throw new Error("FAILED TO FETCH")

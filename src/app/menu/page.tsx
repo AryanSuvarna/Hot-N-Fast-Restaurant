@@ -4,7 +4,7 @@ import React from 'react'
 
 const getData = async () => {
     // we are fetching from our endpoint, which we have defined as /api/categories
-    const res = await fetch("http://localhost:3000/api/categories")
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`)
 
     if (!res.ok) {
         throw new Error("FAILED TO FETCH")
@@ -23,7 +23,7 @@ const Menu = async () => {
                 <Link
                     href={`/menu/${category.type}`} key={category.id}
                     className='w-full h-1/3 bg-cover md:h-1/2 p-8  hover:scale-105 hover:z-50 transition-all duration-500'
-                    style={{ backgroundImage: `url(${category.img})` }}
+                    style={{ backgroundImage: `url(${process.env.NEXTAUTH_URL}/${category.img})` }}
                 >
                     {/* content */}
                     <div className={`text-${category.color} w-1/2`}>
@@ -31,9 +31,6 @@ const Menu = async () => {
                         <p className='text-sm my-5'>{category.desc}</p>
                         <button className={`hidden 2xl:block animated-link text-white bg-black py-2 px-4 font-bold rounded-md `}>Explore</button>
                     </div>
-                    {/* black cover on each link*/}
-                
-
                 </Link>
             ))}
         </div>

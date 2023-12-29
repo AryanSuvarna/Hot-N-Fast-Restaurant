@@ -5,7 +5,7 @@ import React from 'react'
 
 const getData = async (category:string) => {
     // we are fetching from our endpoint, which we have defined as /api/categories
-    const res = await fetch(`http://localhost:3000/api/products?cat=${category}`, {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products?cat=${category}`, {
         cache: "no-store" // this is temporary, will remove it later
     })
 
