@@ -17,7 +17,8 @@ export async function POST(request: NextRequest, { params }: { params: { orderId
         })
         if (orderExists && orderExists.intent_id === null) {
             const paymentIntent = await stripe.paymentIntents.create({
-                amount: (+orderExists.price) * 100, //default currency is cents
+                // default currency is cents, truncate and get only the integer since stripe only accepts integers
+                amount: Math.trunc((+orderExists.price) * 100), 
                 currency: "cad",
                 // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
                 automatic_payment_methods: {

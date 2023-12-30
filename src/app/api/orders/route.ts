@@ -7,11 +7,14 @@ import { getAuthSession } from "@/utils/auth"
 const calculateCost = (subtotal: number) => {
     const SERVICE_FEE = 0.05
     const DELIVERY_FEE = 2
+    var total = 0
 
     if (subtotal > 30) {
-        return (+subtotal) + (+subtotal * SERVICE_FEE)
+        total = Number(((+subtotal) + (+subtotal * SERVICE_FEE)).toFixed(2)) 
+        return total
     } else {
-        return (+subtotal) + (+subtotal * SERVICE_FEE) + DELIVERY_FEE
+        total = Number(((+subtotal) + (+subtotal * SERVICE_FEE) + DELIVERY_FEE).toFixed(2))
+        return total
     }
 }
 

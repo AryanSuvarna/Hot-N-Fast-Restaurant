@@ -149,7 +149,7 @@ const UpdatePage = () => {
         } else // if image is not changed, only update product
         {
             try {
-                await fetch(`/products/${productId}`, {
+                await fetch(`/api/products/${productId}`, {
                     method: "PUT",
                     body: JSON.stringify({
                         img: img,
