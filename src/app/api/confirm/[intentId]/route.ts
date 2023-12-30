@@ -3,10 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const PUT = async (req:NextRequest, { params }: { params: { intentId: string } }) => {
     const { intentId } = params;
-    console.log("OUTSIDE TRY:", intentId)
 
     try {
-        console.log("INSIDE intentId:", intentId);
         await prisma.order.update({
             where: {
                 intent_id: intentId,

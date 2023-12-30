@@ -3,9 +3,8 @@
 import { useSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect } from 'react'
+import { useCart } from '@/utils/cartStore'
 import ConfettiExplosion from 'react-confetti-explosion'
-
-export const dynamic = "force-dynamic"
 
 const SuccessPage = () => {
 
@@ -19,12 +18,15 @@ const SuccessPage = () => {
     const searchParams = useSearchParams();
     const payment_intent = searchParams.get("payment_intent");
 
+    const { clearCart } = useCart()
+
     useEffect(() => {
         const makeRequest = async () => {
             try {
                 await fetch(`/api/confirm/${payment_intent}`, {
                     method: "PUT",
                 });
+                clearCart()
                 setTimeout(() => {
                     router.push("/orders");
                 }, 4000);
