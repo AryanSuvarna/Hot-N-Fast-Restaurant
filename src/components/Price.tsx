@@ -23,6 +23,10 @@ const Price = ({ product }: { product: ProductType }) => {
             const calc = quantity * ((+product.price) + (+product.options[selected].additionalPrice))
             setTotal(calc)
         }
+        else {
+            const calc = quantity * (+product.price)
+            setTotal(calc)
+        }
     }, [quantity, selected, product])
 
     const handleCart = () => {
@@ -40,6 +44,7 @@ const Price = ({ product }: { product: ProductType }) => {
     }
     return (
         <div className='flex flex-col gap-4'>
+            {/* COST CONTAINER */}
             <h2 className='text-2xl font-bold xl:text-3xl'>${(+total).toFixed(2)}</h2>
             {/* OPTIONS CONTAINER */}
             <div className="flex gap-4">

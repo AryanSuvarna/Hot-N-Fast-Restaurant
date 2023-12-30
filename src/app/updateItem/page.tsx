@@ -35,7 +35,7 @@ const UpdatePage = () => {
     // SWR USED FOR CLIENT_SIDE DATA FETCHING
     // fetches product data
     const productFetcher = (url: string) => fetch(url).then(res => res.json())
-    const { data, error, isLoading } = useSWR(`/api/products/${productId}`, productFetcher)
+    const { data, error, isLoading } = useSWR(`/api/products/${productId}`, productFetcher, {refreshInterval: 2000})
 
 
     // useState for all inputs

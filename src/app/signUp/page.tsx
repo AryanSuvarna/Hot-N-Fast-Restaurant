@@ -115,10 +115,11 @@ const SignUpPage = () => {
                             </div>
                             {/* PASSWORD */}
                             <div className='flex flex-col'>
-                                <span className='text-sm lg:text-base'>Password</span>
+                                <span className='text-sm lg:text-base'>Password (at least 8 characters)</span>
                                 <input
                                     type="password"
                                     required
+                                    pattern=".{8,}"
                                     value={userInfo.password}
                                     className='border-2 border-yellow-500 rounded-md p-2'
                                     onChange={(e) => setUserInfo({ ...userInfo, password: e.target.value })} />
@@ -129,6 +130,7 @@ const SignUpPage = () => {
                                 <input
                                     type="password"
                                     required
+                                    pattern=".{8,}"
                                     value={userInfo.confirmPassword}
                                     className='border-2 border-yellow-500 rounded-md p-2'
                                     onChange={(e) => setUserInfo({ ...userInfo, confirmPassword: e.target.value })} />

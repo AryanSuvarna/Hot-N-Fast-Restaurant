@@ -24,11 +24,13 @@ const Navbar = () => {
 
             {/* Logo (MIDDLE OF THE SCREEN)*/}
             <div className='font-semibold text-xl md:text-4xl md:font-bold flex-1 md:text-center hover:scale-105 transition-all duration-500'>
-                <Link href="/" className='flex items-start md:items-center md:justify-center'>
-                    <span className='md:hidden xl:block'>Hot</span>&nbsp;
-                    <span className='md:hidden'>N&apos;</span>
-                    <Image src='/logo.png' alt='' width={100} height={100} className='hidden md:block md:object-contain' />&nbsp;
-                    <span className='md:hidden xl:block'>Fast</span>
+                <Link href="/" >
+                    <div className='flex items-start md:items-center md:justify-center'>
+                        <span className='md:hidden xl:block'>Hot</span>&nbsp;
+                        <span className='md:hidden'>N&apos;</span>
+                        <Image src='/logo.png' alt='' width={100} height={100} className='hidden md:block md:object-contain' />&nbsp;
+                        <span className='md:hidden xl:block'>Fast</span>
+                    </div>
                 </Link>
             </div>
             {/* Mobile Menu (no nav bar in phone view)*/}

@@ -9,7 +9,9 @@ import React from 'react'
 
 const getData = async (id: string) => {
     // we are fetching from our endpoint, which we have defined as /api/product
-    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products/${id}`)
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products/${id}`, {
+        cache: 'no-cache',
+    })
 
     if (!res.ok) {
         throw new Error("FAILED TO FETCH")
