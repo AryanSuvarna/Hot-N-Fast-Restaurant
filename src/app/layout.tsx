@@ -33,16 +33,16 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={montserrat_init.className}>
+            <body className={`${montserrat_init.className} flex flex-col`}>
                 <AuthProvider>
                     <QueryProvider>
-                        <div>
+                        <div className='flex-1'>
                             <Notifications />
                             <Navbar />
                             {children}
-                            <Footer />
-                            <ToastContainer position='bottom-right' theme='light' autoClose={4000} draggable={false} />
                         </div>
+                        <Footer className="mt-auto"/>
+                        <ToastContainer position='bottom-right' theme='light' autoClose={4000} draggable={false} />
                     </QueryProvider>
                 </AuthProvider>
             </body>

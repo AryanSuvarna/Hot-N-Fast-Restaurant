@@ -55,29 +55,27 @@ const CartPage = () => {
     return (
         <div className='h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-yellow-500 lg:flex-row'>
             {/* PRODUCTS CONTAINER */}
-            <div className=' h-1/2 flex justify-center items-center lg:h-full lg:w-2/3 2xl:w-1/2 lg:px-20 xl:px-40'>
-                <div className='p-4 flex flex-col overflow-auto'>
+            <div className=' h-1/2 flex justify-center lg:h-full lg:w-2/3 2xl:w-1/2 lg:px-20 xl:px-40'>
+                <div className='p-4 flex flex-col overflow-scroll'>
                     {/* SINGLE ITEM CONTAINER */}
                     {products.map(item => (
 
-                        <div className="flex items-center justify-between" key={item.id + item.optionsTitle}>
+                        <div className="flex items-center justify-between " key={item.id + item.optionsTitle}>
                             {/* IMAGE CONTAINER */}
                             {item.img && <Image src={item.img} alt='' width={100} height={100} />}
                             {/* INFO CONTAINER */}
-                            <div className="">
+                            <div className='pr-2'>
                                 {/* TITLE CONTAINER */}
-                                <h1 className="uppercase text-lg font-bold">{item.title}</h1>
+                                <h1 className="uppercase text-lg font-bold">{item.title.length > 15 ? item.title.slice(0,15) + "..." : item.title}</h1>
                                 {/* OPTION CONTAINER */}
                                 <span className="">{item.optionsTitle}</span>
                             </div>
                             {/* PRICE CONTAINER */}
-                            <span className="font-bold ">${(+item.price).toFixed(2)} per</span>
+                            <span className="font-bold px-2">${(+item.price).toFixed(2)} per</span>
                             {/* QUANTITY CONTAINER */}
-                            <div className="flex items-center gap-2">
-                                {/* <span className="font-bold">Qty:</span>
-                            <span className="font-bold">{item.quantity}</span> */}
+                            <div className="flex items-center gap-2 p-2">
                                 <div className='flex gap-2 items-center'>
-                                    <button className=" cursor-pointer  text-2xl" onClick={item.quantity > 1 ? () => removeSingleItemFromCart(
+                                    <button className=" cursor-pointer text-2xl" onClick={item.quantity > 1 ? () => removeSingleItemFromCart(
                                         {
                                             ...item,
                                         }
@@ -95,7 +93,7 @@ const CartPage = () => {
                             </div>
 
                             {/* REMOVE CONTAINER */}
-                            <span className=" cursor-pointer" onClick={() => removeFromCart(item)}>X</span>
+                            <span className=" cursor-pointer px-3" onClick={() => removeFromCart(item)}>X</span>
                         </div>
                     ))}
                     {/* CLEAR ALL */}

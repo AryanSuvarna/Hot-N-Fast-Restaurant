@@ -39,7 +39,7 @@ const Featured = async () => {
                                     {item.title}
                                 </h1>
                                 <p className='p-4'>
-                                    {item.desc}
+                                    {item.desc?.length ?? 0 > 100 ? item.desc?.slice(0, 100) + '...' : item.desc}
                                 </p>
                                 <span className='font-bold'>
                                     ${Number(item.price).toFixed(2)}
